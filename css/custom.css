@@ -1,23 +1,15 @@
-/* TÄSSÄ LUODAAN SEARCH BARILLE JA IKONILLE CONTAINER, JOKA ON RELATIVE. TÄMÄN JÄLKEEN VOIDAAN IKONI SEARCH BARIN VASEMMALLE PUOLELLE */
-
-.search-box{
-    position: relative;
+.navbar {
+    background-color: transparent !important;
+    transition: background-color 0.3s ease-in-out;
 }
 
-/* PYÖRISTETÄÄN KULMIA HAKULAATIOKOSTA, LAITETAAN VARJOA SEKÄ TEKSTEJÄ SIIRRETÄÄN ALKAMAAN ENEMMÄN OIKEALTA */
-.search-bar{
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding-left: 40px;
+.navbar.navbar-shrink {
+    background-color: #1D3557 !important;
 }
 
-/* PAKOTETAAN IKONI ABSOLUUTTISESTI TÄHÄN TIETTYYN POSITIOON TULEVAN HAKUTEKSTIN VASEMMALLE PUOLELLE */
-.search-icon{
-    position: absolute;
-    top: 50%;
-    left: 14px;
-    transform: translateY(-50%);
-    color: black;
+.card{
+    color: white;
+    background-color: #1D3557;
 }
 
 .card:hover {
@@ -30,4 +22,8 @@
         width: 80%;
         margin: 0 auto;
     }
+}
+
+.btn {
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, .7);
 }
