@@ -19,8 +19,6 @@
 
         <!-- TÄSSÄ LINKATTU CUSTOM CSS TIEDOSTO, JOSSA JOKAINEN TEHTÄVÄÄN TEHTY MUUTOS SIJAITSEE-->
         <link href="css/custom.css" rel="stylesheet" />
-        <!-- TÄSSÄ TUODAAN CUSTOM JS TIEDOSTO, JONNE TEEN TARVITTAVAT JS KOODIT -->
-        <script src="js/customScript.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -48,24 +46,29 @@
                 <a class="btn btn-primary btn-xl text-uppercase" href="#movies">Tell Me More</a>
             </div>
         </header>
-        <!-- Services-->
+        <!-- MOVIES -->
         <!-- OSIO MUUTETTU TÄYSIN SITEN, ETTÄ TÄSSÄ TEHDÄÄN JSON API HAKU -->
         <section class="page-section" id="movies">
             <div class="container">
-                <div class="text-center">
+                <div class="text-center mb-5">
                     <h2 class="section-heading">MOVIES</h2>
-                    <p class="section-subheading text-muted">Search movies by name</p>
+                    <p class="section-subheading text-muted intro">Discover the enchanting world of Studio Ghibli movies. From timeless classics to modern masterpieces, explore the magic and wonder of these beloved films.</p>
                 </div>
 
                 <!-- TÄSSÄ LUODAAN HAKULAATIKKO, JOKA SISÄLTÄÄ INPUT FIELDIN, JONKA AVULLA VOIDAAN HAKEA NIMELLÄ ELOKUVAA SEKÄ IKONIN TEMPLATEN MUKANA TULLEESTA FONTAWESOMESTA -->
-                <div class="search-box">
+                <!-- <div class="search-box">
                     <input id="searchPhrase" type="text" class="form-control search-bar" placeholder="Search a movie...">
                     <i class="fas fa-search search-icon"></i>
-                </div>
+                </div> -->
 
                 <!-- TEHDÄÄN DIV, JONNE HAETAAN APISTA TIETOA JA SEN SISÄLTÖ KIRJOITETAAN SIELLÄ -->
                 <div>
                     <div id="movie-listing" class="row"></div>
+                </div>
+
+                <!-- TEHDÄÄN DIV, JOKA SISÄLTÄÄ BUTTONIN NÄYTÄ LISÄÄ, JOTA PAINAMALLA KUTSUTAAN JS TIEDOSTOA JA TÄTEN LADATAAN 3 ELOKUVAA LISÄÄ -->
+                <div class="text-center mt-5">
+                    <button id="moreMovies" class="btn btn-primary">Load more...</button>
                 </div>
             </div>
         </section>
@@ -587,6 +590,9 @@
                 </div>
             </div>
         </div>
+
+        <!-- TÄSSÄ TUODAAN CUSTOM JS TIEDOSTO, JONNE TEEN TARVITTAVAT JS KOODIT -->
+        <script src="js/customScript.js"></script>
 
         <!-- COREEN EI KOSKETTU -->
 
