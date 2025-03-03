@@ -23,14 +23,14 @@ function showMovies() {
                     <div class="card-body d-flex flex-column text-center">
                         <h5 class="card-title text-center">${movie.title}</h5>
                         <p class="card-text">${movie.description.substring(0, 80)}...</p>
-                        <button class="btn btn-primary mt-auto align-self-center modal-trigger" 
+                        <button class="btn btn-custom mt-auto align-self-center modal-trigger" 
                             data-title="${movie.title}" 
                             data-image="${movie.movie_banner}" 
                             data-description="${movie.description}" 
                             data-director="${movie.director}" 
                             data-date="${movie.release_date}" 
                             data-score="${movie.rt_score}">
-                            Discover
+                            DISCOVER <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>

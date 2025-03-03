@@ -4,12 +4,12 @@
 }
 
 .navbar.navbar-shrink {
-    background-color: #1D3557 !important;
+    background-color: #073f29 !important;
 }
 
 .card{
     color: white;
-    background-color: #1D3557;
+    background-color: #073f29;
 }
 
 .card:hover {
@@ -24,6 +24,16 @@
     }
 }
 
-.btn {
+.btn-custom {
+    color: #ffc800;
+}
+
+.modal-content{
+    background-color: #DAD7CD;
+}
+
+.modal-header{
+    background-color: #6A994E;
+    color: #FAF3E0;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, .7);
 }
