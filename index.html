@@ -55,21 +55,20 @@
                     <p class="section-subheading text-muted intro">Discover the enchanting world of Studio Ghibli movies. From timeless classics to modern masterpieces, explore the magic and wonder of these beloved films.</p>
                 </div>
 
-                <!-- TÄSSÄ LUODAAN HAKULAATIKKO, JOKA SISÄLTÄÄ INPUT FIELDIN, JONKA AVULLA VOIDAAN HAKEA NIMELLÄ ELOKUVAA SEKÄ IKONIN TEMPLATEN MUKANA TULLEESTA FONTAWESOMESTA -->
-                <!-- <div class="search-box">
-                    <input id="searchPhrase" type="text" class="form-control search-bar" placeholder="Search a movie...">
-                    <i class="fas fa-search search-icon"></i>
-                </div> -->
-
                 <!-- TEHDÄÄN DIV, JONNE HAETAAN APISTA TIETOA JA SEN SISÄLTÖ KIRJOITETAAN SIELLÄ -->
                 <div>
                     <div id="movie-listing" class="row"></div>
                 </div>
 
-                <!-- TEHDÄÄN DIV, JOKA SISÄLTÄÄ BUTTONIN NÄYTÄ LISÄÄ, JOTA PAINAMALLA KUTSUTAAN JS TIEDOSTOA JA TÄTEN LADATAAN 3 ELOKUVAA LISÄÄ -->
+                <!-- TEHDÄÄN DIV, JOKA SISÄLTÄÄ IKONIN NUOLI ALAS, JOKA TOIMII BUTTONIN TAVALLA JA JOTA PAINAMALLA KUTSUTAAN JS TIEDOSTOA JA TÄTEN LADATAAN 3 ELOKUVAA LISÄÄ -->
                 <div class="text-center mt-5">
-                    <button id="moreMovies" class="btn btn-primary">LOAD MORE...</button>
-                    <button id="lessMovies" href="#movies" class="btn btn-primary d-none">SHOW LESS...</button>
+                    <div id="moreMovies" class="cursor-pointer movie-button pulse-hover animate__animated">
+                        <i class="fas fa-arrow-down fa-2x text-primary"></i>
+                    </div>
+                    <!-- TÄSSÄ PUOLESTAAN BUTTON VAIHTAA SUUNTAA KUN OLLAAN ELOKUVALISTAUKSEN PÄÄSSÄ JA KÄYTTÄJÄ KYKENEE PALAUTTAMAAN ALKUTILANTEEN PAINAMALLA IKONIA -->
+                    <div id="lessMovies" class="cursor-pointer movie-button pulse-hover d-none">
+                        <i class="fas fa-arrow-up fa-2x text-primary"></i>
+                    </div>
                 </div>
             </div>
 
@@ -97,58 +96,58 @@
         <section class="page-section bg-light" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">History</h2>
+                    <h3 class="section-subheading text-muted">Learn about the rich history and evolution of Studio Ghibli, from its humble beginnings to its rise as a beloved animation studio.</h3>
                 </div>
                 <ul class="timeline">
                     <li>
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2009-2011</h4>
-                                <h4 class="subheading">Our Humble Beginnings</h4>
+                                <h4>1985–1990</h4>
+                                <h4 class="subheading">Early Years</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">Studio Ghibli was founded in 1985 by Japanese animators Hayao Miyazaki, Isao Takahata, and producer Toshio Suzuki. The studio was established following the success of Nausicaä of the Valley of the Wind (1984), which was not officially a Ghibli production but laid the groundwork for the studio’s formation.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>March 2011</h4>
-                                <h4 class="subheading">An Agency is Born</h4>
+                                <h4>1991–2001</h4>
+                                <h4 class="subheading">International Recognition</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">During this period, Studio Ghibli gained worldwide fame. Porco Rosso (1992) further solidified Miyazaki’s reputation as a master director, while Isao Takahata’s Pom Poko (1994) expanded the studio’s narrative range. The studio achieved massive international success with Princess Mononoke (1997) and Spirited Away (2001).</p></div>
                         </div>
                     </li>
                     <li>
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>December 2015</h4>
-                                <h4 class="subheading">Transition to Full Service</h4>
+                                <h4>2002–2013</h4>
+                                <h4 class="subheading">New Challenges</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">During this phase, Studio Ghibli continued producing high-quality films but also faced new challenges. Miyazaki directed Howl’s Moving Castle (2004) and Ponyo (2008), both of which gained great popularity. A new generation of filmmakers, including Miyazaki’s son, Gorō Miyazaki, emerged with films like From Up on Poppy Hill (2011).</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>July 2020</h4>
-                                <h4 class="subheading">Phase Two Expansion</h4>
+                                <h4>2014–Present</h4>
+                                <h4 class="subheading">A New Era</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">After Miyazaki's retirement announcement, Studio Ghibli paused film production. Isao Takahata directed his final masterpiece, The Tale of the Princess Kaguya (2013), and the studio focused on the Ghibli Museum and television projects. In 2017, Ghibli resumed production, and in 2023, Miyazaki released his latest film, The Boy and the Heron, continuing the studio’s tradition of strong storytelling.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
                             <h4>
-                                Be Part
+                                More is
                                 <br />
-                                Of Our
+                                Yet to
                                 <br />
-                                Story!
+                                Come!
                             </h4>
                         </div>
                     </li>
