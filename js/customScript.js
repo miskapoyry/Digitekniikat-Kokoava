@@ -30,7 +30,7 @@ function showMovies() {
                 <div class="card h-100 shadow">
                     <img class="card-img-top" src="${movie.image}" alt="${movie.title} movie image">
                     <div class="card-body d-flex flex-column text-center">
-                        <h5 class="card-title text-center">${movie.title}</h5>
+                        <p class="card-title text-center">${movie.title}</h5>
                         <p class="card-text">${movie.description.substring(0, 80)}...</p>
                         <button class="btn btn-custom mt-auto align-self-center modal-trigger" 
                             data-title="${movie.title}" 

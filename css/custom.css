@@ -58,6 +58,12 @@ h1 {
     transition: transform 300ms ease-in-out;
 }
 
+/* SUURENNETAAN KORTIN TITLE TEKSTIÄ JA LAITETAAN SE BOLDIKSI */
+.card-title{
+    font-size: larger;
+    font-weight: bold;
+}
+
 /* LUODAAN BTN-CUSTOM LUOKKA JOLLA MUOKATAAN ELOKUVAHAUN KORTTIEN BUTTONIEN FONTIN VÄRIÄ */
 .btn-custom {
     color: var(--secondary);
@@ -128,6 +134,12 @@ h1 {
 /* CHARACTERS OSION KUVIEN TAUSTA */
 .team-member img {
     border: 5px solid #51685f;
+}
+
+/* MUUTETAAN ABOUT OSION VIIMEISEN ELEMENTIN ULKOASUA SAAVUTETTAVAMMAKSI */
+.timeline-image {
+    background-color: var(--primary) !important;
+    color: var(--secondary) !important;
 }
 
 /* KESKITETÄÄN TESTIOSION KYSYMYS JA LAITETAAN MARGINAALIA ALAPUOLELLE */
