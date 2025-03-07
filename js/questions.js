@@ -1,3 +1,5 @@
+// TÄSSÄ ON QUESTIONS OBJEKTI, JONNE ON TALLETTU KYSYMYKSET, VASTAUKSET JA NIIDEN PISTEET
+
 const questions = [
     {
         question: "How would you describe your personality?",
@@ -41,12 +43,14 @@ const questions = [
     }
 ];
 
+//LUODAAN RESULYS OBJEKTI, JOKA SISÄLTÄÄ TULOKSET (ELI HAHMOJEN NIMET), LYHYET KUVAUKSET, MINIMI JA MAKSIMI PISTEMÄÄRÄT JA KUVIEN OSOITTEET, JOITA NÄYTETÄÄN SIVULLA
 const results = [
     { result: "Totoro", text: "You are gentle, kind, and in tune with nature!", min: 5, max: 8, picture: "https://images.pexels.com/photos/302100/pexels-photo-302100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
     { result: "Chihiro", text: "You are brave and always up for an adventure!", min: 9, max: 12, picture: "https://images.pexels.com/photos/1659437/pexels-photo-1659437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
     { result: "Howl", text: "You are full of energy and carry around a sense of mystery!", min: 13, max: 15, picture: "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
 ];
 
+// ALUSTETAAN INDEKSI JA PISTE MUUTTUJAT
 let index = 0;
 let points = 0;
 
@@ -80,19 +84,24 @@ function getQuestion() {
     });
 }
 
+// FUNKTIO, JONKA AVULLA NÄYTETÄÄN TIETOVISAN TULOKSET
 function showResults() {
+
+    // LUODAAN RESULT MUUTTUJA, JOHON ETSITÄÄN AIEMMIN LUODUISTA RESULTEISTA SE, JONNE POINTS KULLAKIN HETKELLÄ SIJOITTUU
     let result = results.find(result => points >= result.min && points <= result.max);
 
+    // TÄYTETÄÄN HTML ELEMENTIT AIEMMIN TÄYTETYLLÄ RESULT MUUTTUJAN SISÄLTÄMILLÄ TIEDOILLA
     document.getElementById("question").textContent = `You are ${result.result}!`;
     document.getElementById("options").innerHTML = `
-    <img src="${result.picture}" class="img-fluid mx-auto d-block rounded mb-3" style="max-width: 300px;" alt="${result.result}">
+    <img src="${result.picture}" class="btn img-fluid mx-auto d-block rounded mb-3" style="max-width: 300px;" alt="${result.result}">
     <p class="text-center">${result.text}</p>`;
     
-    // Näytetään uudelleenkäynnistysnappi
+    // NÄYTETÄÄN RESTART NAPPI, JA LAITETAAN SILLE CSS LUOKKA ANSWE-BUTTON
     document.getElementById("restart").classList.add("answer-button");
     document.getElementById("restart").style.display = "block";
 }
 
+// TÄMÄN FUNKTION AVULLA NOLLATAAN MUUTTUJAT, PIILOTETAAN RESTART NAPPI JA KTUSUTAAN GETQUESTIONS FUNKTIOTA UUDELLEEN, JOLLOIN KÄYNNISTETÄÄN TIETOVISA UUDELLEEN
 function restartCharacterQuiz() {
     index = 0;
     points = 0;

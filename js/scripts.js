@@ -7,6 +7,8 @@
 // Scripts
 // 
 
+// TÄMÄ JS FILE ON TEMPLATEN MUKANA TULLUT, MINKÄ VUOKSI EN OLE KOSKENUT SIIHEN
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function

@@ -1,21 +1,30 @@
+// TÄMÄ JS FILE ON OMA TEKEMÄ, JOTEN KOMMENTOIN SITÄ
+
+// ALUSSA MÄÄRITELLÄÄN MUUTTUJAT, ELI DATA LISTA (TYHJÄ) JA MOVIECOUNT NUMERO
 let movieCount = 3;
 let data = [];
 
+// TEHDÄÄN ASYNC FETCH FUNKTIO, JOKA HAKEE ALEMPANA OLEVASTA API URLISTA ELOKUVALISTAN, LAITTAA JSONIKSI JA DATA MUUTTUJAAN TÄMÄN JÄLKEEN KUTSUTAAN SHOWMOVIES FUNKTIOTA
 async function fetchMovies() {
     try {
         const response = await fetch("https://ghibliapi.vercel.app/films");
         data = await response.json();
         showMovies();
+    // MIKÄLI TULEE VIRHE, NÄYTETÄÄN VIRHEILMOITUS
     } catch (error) {
         document.getElementById("movie-listing").innerHTML = "<p>Couldn't fetch movie data </p>" + error;
     }
 }
 
+// TEHDÄÄN SHOWMOVIES FUNKTIO, JOKA NÄYTTÄÄ ELOKUVAT
 function showMovies() {
+    // ALUSTETAAN TYHJÄ TEXT MUUTTUJA, JOKA ON ELOKUVALISTAN ID HTMLSSÄ
     let text = document.getElementById("movie-listing");
     text.innerHTML = "";
 
+    // KÄYDÄÄN FOREACH LOOPILLA DATA LÄPI JA KÄYTETÄÄN SLICE METODIA, JONKA AVULLA KYKENEMME RAJAAMAAN NÄYTETYN MÄÄRÄN ELOKUVIA MOVIECOUNTIN MUKAAN
     data.slice(0, movieCount).forEach(movie => {
+        // JOKAISESTA ELOKUVASTA LUODAAN KORTIT JA DATAT JOTA NÄYTETÄÄN OVAT APIN TIETOJA. KORTIN ALALAIDASSA ON BUTTONI, JOKA LÄHETTÄÄ MÄÄRITETYT DATAT MODAALIIN
         let card = `
             <div class="mt-3 mb-3 col-lg-4 col-md-4">
                 <div class="card h-100 shadow">
@@ -39,25 +48,28 @@ function showMovies() {
         text.innerHTML += card;
     });
 
-    // Näytä/piilota "Show More" ja "Show Less" -napit
+    // MIKÄLI MOVIECOUNT MUUTTUJA ON SUUREMPI TAI YHTÄSUURI KUN DATA LISTAN PITUUS, PIILOTETAAN MOREMOVIES ID OLEVA IKONI JA NÄYTETÄÄN LESSMOVIES ID OLEVA IKONI
     if (movieCount >= data.length) {
         document.getElementById("moreMovies").classList.add("d-none");
         document.getElementById("lessMovies").classList.remove("d-none");
     }
 }
 
+// JOS MORE MOVIES IKONIA KLIKATAAN, LISÄTÄÄN MOVIECOUNTIIN 3 JA KUTSUTAAN SHOWMOVIES UUDESTAAN, JOTTA SAADAAN PÄIVITETTY MÄÄRÄ ELOKUVIA NÄKYVIIN
 document.getElementById("moreMovies").addEventListener("click", function () {
     movieCount += 3;
     showMovies();
 })
 
-// Nämä kaikki toimet tehdään, kun käyttäjä klikkaa buttonia jonka id on "lessMovies"
+// JOS KÄYTTÄJÄ KLIKKAA LESSMOVIES IKONIA, ASETETAAN MOVIECOUNT TAKAISIN 3 ELI PALATAAN ALKUTILANTEESEEN
 document.getElementById("lessMovies").addEventListener("click", function () {
-    // Asetetaan VAIN 3 elokuvaa näkyviin
     movieCount = 3;
+    // KUTSUTAAN SHOWMOVIES FUNKTIOTA UUDELLEEN, JOTTA VOIDAAN NÄYTTÄÄ OIKEA MÄÄRÄ ELOKUVIA
     showMovies();
+    // PIILOTETAAN LESSMOVIES IKONI JA NÄYTETÄÄN MOREMOVIES IKONI
     this.classList.add("d-none");
     document.getElementById("moreMovies").classList.remove("d-none");
+    // SCROLLATAAN MOVIES ID OLEVAN SECTION ELEMENTIN ALKUUN
     document.getElementById("movies").scrollIntoView();
 });
 
@@ -70,6 +82,8 @@ document.addEventListener("click", function (event) {
         event.preventDefault();
 
         let button = event.target;
+
+        // KUTSUTAAN OPEN MODAL FUNKTIOTA, JOLLE LÄHETETÄÄN BUTTONIN DATAT
         openModal(
             button.dataset.title,
             button.dataset.image,
@@ -81,7 +95,9 @@ document.addEventListener("click", function (event) {
     }
 });
 
+// OPENMODAL FUNKTIOSSA NÄYTETÄÄN PUOLESTAAN AIEMMIN LÄHETETYT DATAT HTML KOODISSA MÄÄRITELLYSSÄ ESIMERKKIMODAALISSA
 function openModal(title, image, description, director, date, score) {
+    // NÄYTETÄÄN ELOKUVAN TITLE, VUOSI, KUVA, KUVAUS, OHJAAJA JA ARVOSTELU
     document.getElementById("exampleModal").innerHTML = `${title} (${date})`;
     document.getElementById("movieImage").src = image;
     document.getElementById("movieDescription").innerHTML = `
@@ -90,6 +106,7 @@ function openModal(title, image, description, director, date, score) {
     <p class="mt-3 text-center">${score} / 100</p>
     `;
 
+    // LUODAAN JA NÄYTETÄÄN MODAALI JOKA LÖYTYY HTML KOODISTA ID:LLÄ MOVIEMODAL
     new bootstrap.Modal(document.getElementById("movieModal")).show();
 }
 
