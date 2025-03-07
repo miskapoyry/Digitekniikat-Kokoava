@@ -9,15 +9,12 @@
     <!-- LISÄTTY KUVAAVA TITLE KOHDERYHMÄN KANNALTA 53 MERKKIÄ -->
     <title>Totoro’s Hideout | Explore the magic of Studio Ghibli</title>
     <!-- LISÄTTY KUVAAVA DESCRIPTION PITUUS 115 MERKKIÄ (JOTKIN MOBIILILAITTEET RAJAAVAT 120) -->
-    <meta name="description"
-        content="Explore Totoro's hideout to gain knowledge about Studio Ghibli movies, brief history or the fascinating characters.">
+    <meta name="description" content="Explore Totoro's hideout to gain knowledge about Studio Ghibli movies, brief history or the fascinating characters.">
     <!-- Tuodaan oma favicon assets/favicon.ico -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=2" />
     <!-- Font Awesome icons (free version) TÄSSÄ POISTETAAN ALL MÄÄRITTELY, KOSKA SE VAIKUTTAA NEGATIIVISESTI SIVUSTON TOIMINTAAN JA MUUTETAAMN FONT AWESOME CSS
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-
-    <link rel="preload" as="image" href="assets/img/header-bg.webp" type="image/webp">
 
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -27,6 +24,8 @@
 
     <!-- TÄSSÄ LINKATTU CUSTOM CSS TIEDOSTO, JOSSA JOKAINEN TEHTÄVÄÄN TEHTY MUUTOS SIJAITSEE-->
     <link href="css/custom.css" rel="stylesheet" />
+
+    <link rel="preload" as="image" href="assets/img/header-bg.webp" type="image/webp">
 </head>
 
 <body id="page-top">
@@ -51,7 +50,7 @@
     </nav>
     <!-- Masthead-->
     <header class="masthead">
-        <img src="assets/img/header-bg.webp" class="header-bg" alt="Totoro Background">
+        <img src="assets/img/header-bg.webp" class="header-bg" alt="Totoro Background" loading="eager">
         <div class="container">
             <div class="masthead-subheading">Welcome To Totoro’s Hideout!</div>
             <div class="masthead-heading text-uppercase">
