@@ -112,3 +112,39 @@ function openModal(title, image, description, director, date, score) {
 
 // Ladataan elokuvat, kun sivu on valmis
 document.addEventListener("DOMContentLoaded", fetchMovies);
+
+// FUNKTIO, JOSSA VALIDOIDAAN FORM INPUTIT
+function validateFields() {
+    let form = document.getElementById("contactForm");
+
+    // JOS KAIKKI FORMIN KENTÄT EIVÄT OLE VALID
+    if (!form.checkValidity()) {
+        // LISÄTÄÄN BOOTSTRAP VALIDAATIOLUOKKA, JOKA NÄYTTÄÄ x TAI check IKONIT KENTÄN OIKEASSA LAIDASSA
+        form.classList.add("was-validated");
+        return;
+    }
+
+    // KUTSUTAAN MOCKSEND FUNKTIOTA, MIKÄLI INPUTIT OVAT VALIDEJA
+    mocksend();
+}
+
+// MOCKSEND FUNKTIO, JOLLA NÄYTETÄÄN ALERT ONNISTUNEESTA LÄHETYKSESTÄ
+function mocksend() {
+
+    // ETSITÄÄN ALERT ELEMENTTI SEN ID AVULLA
+    let success = document.getElementById("success-alert");
+
+    // POISTETAAN DISPLAY NONE LUOKKA
+    success.classList.remove("d-none");
+
+    // TYHJENNETÄÄN FORM INPUTIT
+    document.getElementById("contactForm").reset();
+
+    // POISTETAAN MAHDOLLISET BOOTSTRAP VALIDAATIOT
+    document.getElementById("contactForm").classList.remove("was-validated");
+
+    // SETTIMEOUT METODILLA PIILOTETAAN NÄKYVISSÄ OLEVA ALERT LISÄÄMÄLLÄ DISPLAY NONE 3 SEKUNNIN JÄLKEEN
+    setTimeout(function () {
+        success.classList.add("d-none");
+    }, 3000);
+}

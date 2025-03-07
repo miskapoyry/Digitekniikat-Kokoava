@@ -5,6 +5,14 @@
     --tertiary: #6A994E;
 }
 
+h1 {
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 3.25rem;
+    margin-bottom: 2rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
 /* MUUTETAAN NAVBAR VÄRIN KÄYTTÄYTYMISTÄ. ISOILLA NÄYTÖILLÄ YLÄLAIDASSA VÄRI ON TRANSPARENT, PIENELLÄ NÄYTÖLLÄ PUOLESTAAN EI, JOTTA SAADAAN MENU NÄKYMÄÄN ODOTETUNLAISESTI */
 @media screen and (min-width: 990px) {
     .navbar.navbar-shrink {
@@ -155,4 +163,9 @@
 /* MUUTETAAN TEXT-MUTED LUOKKAN VÄRIÄ TUMMEMMAKSI, JOTTA SIVUSTO ON SAAVUTETTAVEMPI */
 .text-muted{
     color: rgb(60, 60, 60) !important;
+}
+
+/* LUOKKA, JOSSA VAIN TEKSTI ON VALKOINEN */
+.text-white{
+    color: white;
 }
