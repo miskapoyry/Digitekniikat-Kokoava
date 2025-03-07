@@ -1,18 +1,44 @@
+/* MÄÄRITELLÄÄN :ROOT VÄRIT, JOTTA MUUTTUJIA VOIDAAN KÄYTTÄÄ MYÖS CSS */
 :root {
     --primary: #073f29;
     --secondary: #ffc800;
     --tertiary: #6A994E;
 }
 
-.navbar {
-    background-color: transparent !important;
+/* MUUTETAAN NAVBAR VÄRIN KÄYTTÄYTYMISTÄ. ISOILLA NÄYTÖILLÄ YLÄLAIDASSA VÄRI ON TRANSPARENT, PIENELLÄ NÄYTÖLLÄ PUOLESTAAN EI, JOTTA SAADAAN MENU NÄKYMÄÄN ODOTETUNLAISESTI */
+@media screen and (min-width: 990px) {
+    .navbar.navbar-shrink {
+        background-color: var(--primary) !important;
+    }
+
+    .navbar {
+        background-color: transparent !important;
+        transition: background-color 0.3s ease-in-out;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .navbar {
+        background-color: var(--primary) !important;
+    }
+}
+
+/* LUODAAN MAIN BUTTONILLE OMA ELEMENTTI, JOSSA KÄYTETÄÄN VÄRIMUUTTUJIA */
+.btn-main {
+    background-color: var(--primary);
+    color: var(--secondary);
     transition: background-color 0.3s ease-in-out;
 }
 
-.navbar.navbar-shrink {
-    background-color: var(--primary) !important;
+/* LAITETAAN TÄLLE MAIN BUTTONILLE HOVER EFEKTI, JOSSA KOKOA SUURENNETAAN JA YLIKIRJOITETAAN STYLES.CSS TIEDOSTON VÄRIT OIKEIKSI */
+.btn-main:hover {
+    transform: scale(1.03);
+    transition: transform 300ms ease-in-out;
+    background-color: var(--tertiary);
+    color: var(--secondary);
 }
 
+/* LUODAAN ITSE KORTIT OIKEALLA VÄRILLÄ TAUSTAAN SEKÄ FONTEILLE */
 .card {
     color: white;
     background-color: var(--primary);
@@ -24,27 +50,24 @@
     transition: transform 300ms ease-in-out;
 }
 
-@media (min-width:425px) {
-    .intro {
-        width: 80%;
-        margin: 0 auto;
-    }
-}
-
+/* LUODAAN BTN-CUSTOM LUOKKA JOLLA MUOKATAAN ELOKUVAHAUN KORTTIEN BUTTONIEN FONTIN VÄRIÄ */
 .btn-custom {
     color: var(--secondary);
 }
 
+/* ASETETAAN MODAALIN CONTENTIN TAUSTAVÄRI HAALEAKSI BEIGEKSI */
 .modal-content {
     background-color: #DAD7CD;
 }
 
+/* ASETETAAN MODAALIN HEADERIN VÄRI MUUTTUJALLA, FONTTI CONTENTIN BG VÄRISEKSI JA ASETETAAN TEXT SHADOW SAAVUTETTAVUUDEN LISÄÄMISEKSI */
 .modal-header {
     background-color: var(--tertiary);
     color: #FAF3E0;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, .7);
 }
 
+/* TEHDÄÄN YKSINKERTAINEN PULSSI ANIMAATIO IKONILLE KORTTIEN ALLE. SUURENNETAAN KOKOA JA PALAUTETAAN TAKAISIN */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -59,27 +82,12 @@
     }
 }
 
-@keyframes fadeOutDown {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-}
-
-.fade-out-down {
-    animation: fadeOutDown 0.5s ease-out forwards;
-}
-
-
+/* KUTSUTAAN ANIMAATIOTA KUN HOVERATAAN IKONIN PÄÄLLÄ */
 .pulse-hover:hover {
     animation: pulse 0.4s ease-in-out;
 }
 
+/* LUODAAN MORE MOVIES BUTTONILLE TYYLIT JA TEHDÄÄN IKONISTA NAPIN NÄKÖINEN. TEHDÄÄN NAPISTA MYÖS PYÖREÄ */
 .movie-button {
     display: inline-flex;
     align-items: center;
@@ -93,31 +101,37 @@
     cursor: pointer;
 }
 
+/* HOVERISSA VAIHDETAAN TAUSTAVÄRIÄ */
 .movie-button:hover {
     background-color: #6A994E;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* NÄISSÄ KOLMESSA MUUTETAAN TEMPLATEN TIEDOSTOSSA MÄÄRITELTYJÄ VÄREJÄ ENEMMÄN TEKEEMAAN SOPIVAKSI */
+/* ABOUT OSION VIIVAN VÄRI */
 .timeline:before {
     background-color: #51685f !important;
 }
 
+/* ABOUT OSION KUVIEN TAUSTA */
 .timeline > li .timeline-image {
     border: 7px solid #51685f !important;
 }
 
+/* CHARACTERS OSION KUVIEN TAUSTA */
 .team-member img {
     border: 5px solid #51685f;
 }
 
+/* KESKITETÄÄN TESTIOSION KYSYMYS JA LAITETAAN MARGINAALIA ALAPUOLELLE */
 .quiz-title{
     text-align: center;
     margin-bottom: 20px;
 }
 
+/* LAITETAAN TESTIOSION VASTAUSBUTTONILLE LEVEYS 80% JA KESKITETÄÄN KESKELLE. VÄRIT ASETETAAN TAUSTALLE JA FONTILLE. PYÖRISTETÄÄN REUNAT JA LAITETAAN MARGINAALIA SEKÄ PADDINGIA */
 .answer-button {
     display: block;
-    width: 90%;
+    width: 80%;
     margin: 10px auto;
     padding: 12px;
     background-color: var(--primary);
@@ -126,6 +140,19 @@
     border-radius: 10px;
 }
 
+/* VAIHDETAAN TESTIOSION VASTAUSBUTTONIN HOVER VÄRI MUUTTUJALLA */
 .answer-button:hover {
     background-color: var(--tertiary);
+}
+
+/* MUUTETAAN FOOTERIN VÄREJÄ JA LAITETAAN FONTTI BOLDIKSI */
+.footer{
+    background-color: var(--primary);
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+/* MUUTETAAN TEXT-MUTED LUOKKAN VÄRIÄ TUMMEMMAKSI, JOTTA SIVUSTO ON SAAVUTETTAVEMPI */
+.text-muted{
+    color: rgb(60, 60, 60) !important;
 }
