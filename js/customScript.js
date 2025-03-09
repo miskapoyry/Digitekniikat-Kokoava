@@ -148,3 +148,11 @@ function mocksend() {
         success.classList.add("d-none");
     }, 3000);
 }
+
+// LUODAAN FUNKTIO, JONKA AVULLA SAADAAN NÄYTETTYÄ BOOTSTRAP TOOLTIPIT, KUN SIVU ON LADATTU
+document.addEventListener("DOMContentLoaded", function () {
+    // ETSITÄÄN KAIKKI TOOLTIPIT
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    // JOKAISESTA TOOLTIPISTÄ TEHDÄÄ BOOTSTRAP TOOLTIP, JOTTA NE TOIMIVAT
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+});

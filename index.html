@@ -28,15 +28,18 @@
 </head>
 
 <body id="page-top">
-    <!-- Navigation-->
+    <!-- Navigation joka on "laaja" isoilla näytöillä, tumma teema ja sivun ylälaidassa -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+            <!-- Logo, joka on vain tekstiä ja jossa on linkki ylälaitaan sivua -->
+            <a class="navbar-brand" href="#page-top">Totoro’s Hideout</a>
+            <!-- Hamburger menu jos tulee pienemmillä näytöillä vasempaan ylälaitaan ja siihen font awesome bars ikoni -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ms-1"></i>
             </button>
+            <!-- Tässä navigaatiolinkit -->
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#movies">Movies</a></li>
@@ -49,12 +52,15 @@
     </nav>
     <!-- Masthead-->
     <header class="masthead">
-        <img src="assets/img/header-bg.webp" class="header-bg" alt="Totoro Background" loading="eager">
+        <!-- Taustakuva laitettu kuvana suorituskyvyn parantamisen vuoksi ja lisätty bg-header luokka ja eager lataus-->
+        <img src="assets/img/header-bg.webp" class="header-bg" alt="Moody picture of a japanese home from outsite" loading="eager">
         <div class="container">
+            <!-- Tekstit-->
             <div class="masthead-subheading">Welcome To Totoro’s Hideout!</div>
             <div class="masthead-heading text-uppercase">
                 <h1>Explore Studio Ghibli</h1>
             </div>
+            <!-- Button josta pääsee katsomaan movies -->
             <a class="btn btn-main btn-xl text-uppercase" href="#movies">Discover movies</a>
         </div>
     </header>    
@@ -62,6 +68,7 @@
     <!-- OSIO MUUTETTU TÄYSIN SITEN, ETTÄ TÄSSÄ TEHDÄÄN JSON API HAKU -->
     <section class="page-section" id="movies">
         <div class="container">
+            <!-- Osuuden tekstit -->
             <div class="text-center mb-5">
                 <h2 class="section-heading">MOVIES</h2>
                 <p class="section-subheading text-muted"><em>Discover the enchanting world of Studio Ghibli movies. From
@@ -106,7 +113,7 @@
         </div>
     </section>
 
-    <!-- About-->
+    <!-- Historia -->
     <section class="page-section bg-light" id="about">
         <div class="container">
             <div class="text-center">
@@ -114,7 +121,9 @@
                 <h3 class="section-subheading text-muted">Learn about the rich history and evolution of Studio Ghibli,
                     from its humble beginnings to its rise as a beloved animation studio.</h3>
             </div>
+            <!-- Template käyttää tässä osiossa listaa, joka on css avulla muutettu timelineksi-->
             <ul class="timeline">
+                <!-- Jokaisen list itemin rakenne on sama. Siinä on kuva, vuodet, otsikko ja paragraph. Tässä siis template täytetty sivuun liittyvällä sisällöllä. Sisällön (tekstien) tuottamisessa on käytetty ChatGPT 4-kielimallia -->
                 <li>
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg"
                             alt="Close up on early sketches" /></div>
@@ -196,7 +205,7 @@
             </ul>
         </div>
     </section>
-    <!-- Characters -->
+    <!-- Hahmot, jossa ensimmäinen puolisko on valmista templatea ja toinen oma tekemä pieni testi. Näiden tekstin luomisessa on myös hyödynnetty ChatGPT 4 -kielimallia. -->
     <section class="page-section" id="characters">
         <div class="container">
             <div class="text-center">
@@ -204,17 +213,22 @@
                 <h3 class="section-subheading text-muted">Dive into the world of Studio Ghibli characters. Meet the
                     beloved personalities that bring these enchanting stories to life.</h3>
             </div>
+            <!-- Gridillä tehty jaoittelu kuville -->
             <div class="row">
+                <!-- Jokainen osa vie 1/3 näytöstä, jos näyttö on pieni, näytetään itemit yksitellen-->
                 <div class="col-lg-4">
+                    <!-- Jokaisella "team-memberillä" on sama rakenne. Se sisältää pyöreän css avulla muotoillun kuvan, otsikon, paragraphin ja linkin, josta voi lukea lisätietoja. -->
                     <div class="team-member">
                         <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg"
                             alt="AI generated picture of No-Face from Spirited Away in a forest" />
                         <h4>No-Face</h4>
                         <p class="text-muted">Spirited Away</p>
+                        <!-- Tässä kohdassa luodaan bootstrap tooltipit linkkinen alapuolelle -->
                         <a class="btn btn-dark btn-social mx-2" href="https://ghibli.fandom.com/wiki/No-Face"
-                            aria-label="No-Face more information"><i class="fas fa-globe"></i></a>
+                            aria-label="No-Face more information" data-bs-toggle="tooltip" data-bs-placement="bottom" title="More info about No-Face here!"><i class="fas fa-globe"></i></a>
                     </div>
                 </div>
+                <!-- Toistaa yllä olevaa rakennetta -->
                 <div class="col-lg-4">
                     <div class="team-member">
                         <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg"
@@ -222,9 +236,10 @@
                         <h4>Kiki</h4>
                         <p class="text-muted">Kiki's Delivery Service</p>
                         <a class="btn btn-dark btn-social mx-2" href="https://ghibli.fandom.com/wiki/Kiki"
-                            aria-label="No-Face more information"><i class="fas fa-globe"></i></a>
+                            aria-label="No-Face more information" data-bs-toggle="tooltip" data-bs-placement="bottom" title="More info about Kiki here!"><i class="fas fa-globe"></i></a>
                     </div>
                 </div>
+                <!-- Toistaa yllä olevaa rakennetta -->
                 <div class="col-lg-4">
                     <div class="team-member">
                         <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg"
@@ -232,20 +247,26 @@
                         <h4>Totoro</h4>
                         <p class="text-muted">My Neighbor Totoro</p>
                         <a class="btn btn-dark btn-social mx-2" href="https://ghibli.fandom.com/wiki/Totoro"
-                            aria-label="No-Face more information"><i class="fas fa-globe"></i></a>
+                            aria-label="No-Face more information" data-bs-toggle="tooltip" data-bs-placement="bottom" title="More info about Totoro here!"><i class="fas fa-globe"></i></a>
                     </div>
                 </div>
             </div>
             <hr />
+            <!-- Tästä alkaa oma tekemä tietovisa, jossa käytetään questions.js tiedostoa -->
             <div class="row mt-5">
+                <!-- Keskitetyt tekstit -->
                 <div class="col-lg-8 mx-auto text-center">
                     <p class="large text-muted">Take this fun quiz to find out which Studio Ghibli character you are
                         most like. Answer a few questions and discover your inner Ghibli spirit!</p>
                 </div>
             </div>
+            <!-- Container, jota js kirjoittaa -->
             <div id="character-quiz" class="mt-5">
+                <!-- Tänne tulee titlet eli kysymykset ja tulos -->
                 <h2 id="question" class="quiz-title"></h2>
+                <!-- Tänne vaihtoehdot ja valmistumisen jälkeen lyhyt kuvaus tuloksesta ja aiheeseen hieman liittyvä kuva -->
                 <div id="options" class="mt-3"></div>
+                <!-- Restart nappi, joka laitetaan näkyviin kun testi on valmis ja painamalla päästään tekemään testi uudelleen -->
                 <button id="restart" onclick="restartCharacterQuiz()" style="display:none;">Try Again</button>
             </div>
         </div>
@@ -259,26 +280,29 @@
             </div>
 
             <!-- TÄSSÄ TULEE FORMI, JOHON ON TEHTY VALIDAATIOON MUUTOKSIA BOOTSTRAPIN AVULLA -->
+            <!-- Käytetään novalidatea avuksi -->
             <form id="contactForm" class="g-3 needs-validation" novalidate>
                 <div class="row align-items-stretch mb-5">
+                    <!-- Gridillä jaettu kahteen osaan. Toisessa osassa nimi ja email ja toisessa puolestaan viesti -->
                     <div class="col-md-6">
+                        <!-- Tässä pyydetään nimiä, huomaa invalid feecback luokka, josta näytetään teksti, mikäli input ei ole hyväksytty-->
                         <div class="form-group">
                             <input type="text" class="form-control" id="name" placeholder="Your Name *" required>
                             <div class="invalid-feedback">A name is required.</div>
                         </div>
 
-                        <div class="form-group">
+                        <!-- Tässä pyydetään email, huomaa invalid feecback luokka, josta näytetään teksti, mikäli input ei ole hyväksytty-->
+                        <!-- mb-md-0 luokan avulla voidaan laittaa margin bottom 0, mikäli kyseessä on suuremmat näytöt. Eli tämä siis mahdollistaa sen, että molemmat osat ovat saman kokoiset-->
+                        <div class="form-group mb-md-0">
                             <input type="email" class="form-control" id="email" placeholder="Your Email *" required>
                             <div class="invalid-feedback">A valid email is required.</div>
                         </div>
-
-                        <div class="form-group mb-md-0">
-                            <input type="tel" class="form-control" id="phone" placeholder="Your Phone *" required>
-                            <div class="invalid-feedback">A phone number is required.</div>
-                        </div>
                     </div>
 
+                    <!-- Tässä toinen osa, joka on viestille varattu-->
                     <div class="col-md-6">
+                        <!-- Tässä pyydetään messagea, huomaa invalid feecback luokka, josta näytetään teksti, mikäli input ei ole hyväksytty-->
+                        <!-- Samalla tavalla käytetään myös marginia, jotta saadaan osasta saman kokoinen kun aiempi -->
                         <div class="form-group form-group-textarea mb-md-0">
                             <textarea class="form-control" id="message" placeholder="Your Message *"
                                 required></textarea>
@@ -287,10 +311,12 @@
                     </div>
                 </div>
 
+                <!-- Success alert, joka näytetään "lähetyksen onnistuessa"-->
                 <div id="success-alert" class="alert alert-success d-none text-center" role="alert">
                     Message sent successfully!
                 </div>
 
+                <!-- Send message buttoni, jossa tehdään fieldien validointi ensimmäiseksi, jonka jälkeen jos valid, niin "mock sendataan" palaute ei minnekään (koska tietokantaa ei ole käytössä)-->
                 <div class="text-center">
                     <button class="btn btn-main btn-xl text-uppercase" type="button" onclick="validateFields()">Send
                         Message</button>
@@ -298,7 +324,7 @@
             </form>
         </div>
     </section>
-    <!-- Footer-->
+    <!-- Footeri, jossa ei tällä hetkellä ole muuta kun heiman tekstiä -->
     <footer class="footer py-4">
         <div class="container">
             <div class="row align-items-center">
