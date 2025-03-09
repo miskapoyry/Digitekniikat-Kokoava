@@ -28,9 +28,9 @@ function showMovies() {
         let card = `
             <div class="mt-3 mb-3 col-lg-4 col-md-4">
                 <div class="card h-100 shadow">
-                    <img class="card-img-top" src="${movie.image}" alt="${movie.title} movie image">
+                    <img class="card-img-top" src="${movie.image}" alt="Official movie cover photo of ${movie.title}">
                     <div class="card-body d-flex flex-column text-center">
-                        <p class="card-title text-center">${movie.title}</h5>
+                        <h4 class="card-title text-center">${movie.title}</h4>
                         <p class="card-text">${movie.description.substring(0, 80)}...</p>
                         <button class="btn btn-custom mt-auto align-self-center modal-trigger" 
                             data-title="${movie.title}" 

@@ -71,9 +71,9 @@
             <!-- Osuuden tekstit -->
             <div class="text-center mb-5">
                 <h2 class="section-heading">MOVIES</h2>
-                <p class="section-subheading text-muted"><em>Discover the enchanting world of Studio Ghibli movies. From
+                <h3 class="section-subheading text-muted">Discover the enchanting world of Studio Ghibli movies. From
                         timeless classics to modern masterpieces, explore the magic and wonder of these beloved
-                        films.</em></p>
+                        films.</h3>
             </div>
 
             <!-- TEHDÄÄN DIV, JONNE HAETAAN APISTA TIETOA JA SEN SISÄLTÖ KIRJOITETAAN SIELLÄ -->
@@ -287,6 +287,7 @@
                     <div class="col-md-6">
                         <!-- Tässä pyydetään nimiä, huomaa invalid feecback luokka, josta näytetään teksti, mikäli input ei ole hyväksytty-->
                         <div class="form-group">
+                            <label for="name" class="visually-hidden">Your full name</label>
                             <input type="text" class="form-control" id="name" placeholder="Your Name *" required>
                             <div class="invalid-feedback">A name is required.</div>
                         </div>
@@ -294,6 +295,7 @@
                         <!-- Tässä pyydetään email, huomaa invalid feecback luokka, josta näytetään teksti, mikäli input ei ole hyväksytty-->
                         <!-- mb-md-0 luokan avulla voidaan laittaa margin bottom 0, mikäli kyseessä on suuremmat näytöt. Eli tämä siis mahdollistaa sen, että molemmat osat ovat saman kokoiset-->
                         <div class="form-group mb-md-0">
+                            <label for="email" class="visually-hidden">Your working email</label>
                             <input type="email" class="form-control" id="email" placeholder="Your Email *" required>
                             <div class="invalid-feedback">A valid email is required.</div>
                         </div>
@@ -304,6 +306,7 @@
                         <!-- Tässä pyydetään messagea, huomaa invalid feecback luokka, josta näytetään teksti, mikäli input ei ole hyväksytty-->
                         <!-- Samalla tavalla käytetään myös marginia, jotta saadaan osasta saman kokoinen kun aiempi -->
                         <div class="form-group form-group-textarea mb-md-0">
+                            <label for="message" class="visually-hidden">Your message</label>
                             <textarea class="form-control" id="message" placeholder="Your Message *"
                                 required></textarea>
                             <div class="invalid-feedback">A message is required.</div>
