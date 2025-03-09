@@ -100,6 +100,7 @@ function openModal(title, image, description, director, date, score) {
     // NÄYTETÄÄN ELOKUVAN TITLE, VUOSI, KUVA, KUVAUS, OHJAAJA JA ARVOSTELU
     document.getElementById("exampleModal").innerHTML = `${title} (${date})`;
     document.getElementById("movieImage").src = image;
+    document.getElementById("movieImage").alt = `A scene from the movie ${title}`;
     document.getElementById("movieDescription").innerHTML = `
     <p class="mt-3 text-center"><strong>Director: ${director}</strong></p>
     <p class="mt-3 text-center">${description}</p>
